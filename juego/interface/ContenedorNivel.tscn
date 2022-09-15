@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://recursos/interface/bg_layer1.png" type="Texture" id=2]
+[ext_resource path="res://juego/interface/Kenney Future.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="ContenedorNivel" type="NinePatchRect"]
+self_modulate = Color( 0.498039, 0.203922, 0.768627, 0.490196 )
+margin_right = 159.0
+margin_bottom = 36.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="nivel" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 16.0
+margin_top = -14.5
+margin_right = 92.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 1 )
+text = "NIVEL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="numero" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = -14.5
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 2 )
+text = "0"

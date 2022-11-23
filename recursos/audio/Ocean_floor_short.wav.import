@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Ocean_floor_short.wav-5cf4849320c43ca1e9c8cdaa52cc3072.sample"
+
+[deps]
+
+source_file="res://recursos/audio/Ocean_floor_short.wav"
+dest_files=[ "res://.import/Ocean_floor_short.wav-5cf4849320c43ca1e9c8cdaa52cc3072.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

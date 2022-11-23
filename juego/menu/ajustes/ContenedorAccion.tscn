@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://juego/menu/Revamped.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://juego/menu/ajustes/InputAccion.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=8]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 26
+font_data = ExtResource( 1 )
+
+[node name="ContenedorAccion" type="HBoxContainer"]
+margin_right = 216.0
+margin_bottom = 34.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NombreAccion" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 3.0
+margin_right = 139.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 8 )
+text = "accion"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 143.0
+margin_right = 147.0
+margin_bottom = 34.0
+
+[node name="InputAccion" type="Button" parent="."]
+margin_left = 151.0
+margin_right = 191.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 9 )
+toggle_mode = true
+text = "w"
+script = ExtResource( 2 )
+accion = "disparar"
+
+[connection signal="toggled" from="InputAccion" to="InputAccion" method="_on_InputAccion_toggled"]

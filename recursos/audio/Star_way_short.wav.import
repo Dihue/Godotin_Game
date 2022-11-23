@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Star_way_short.wav-c29bc853174548c2a5bd94aad20db697.sample"
+
+[deps]
+
+source_file="res://recursos/audio/Star_way_short.wav"
+dest_files=[ "res://.import/Star_way_short.wav-c29bc853174548c2a5bd94aad20db697.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

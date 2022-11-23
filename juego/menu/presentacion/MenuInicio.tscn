@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://juego/menu/Revamped.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://juego/interface/Kenney Future.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://juego/menu/presentacion/MenuInicio.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="MenuInicio" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_ajustes = "res://juego/menu/ajustes/MenuAjustes.tscn"
+nivel_inicial = "res://juego/niveles/NivelTest.tscn"
+pantalla_carga = "res://juego/menu/carga/PantallaCarga.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = -220.0
+margin_right = 118.0
+margin_bottom = -171.0
+custom_fonts/font = SubResource( 1 )
+text = "godotin"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="BotonCargar" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -95.0
+margin_right = 120.0
+margin_bottom = -35.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "cargar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonNuevo" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -30.0
+margin_right = 120.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 2 )
+text = "nuevo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonOpciones" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 35.0
+margin_right = 120.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+text = "opciones"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 100.0
+margin_right = 120.0
+margin_bottom = 105.0
+
+[node name="BotonSalir" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 110.0
+margin_right = 120.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="NinePatchRect/BotonNuevo" to="." method="_on_BotonNuevo_pressed"]
+[connection signal="pressed" from="NinePatchRect/BotonOpciones" to="." method="_on_BotonOpciones_pressed"]
+[connection signal="pressed" from="NinePatchRect/BotonSalir" to="." method="_on_BotonSalir_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://juego/menu/ajustes/font_volumen.tres" type="DynamicFont" id=1]
+[ext_resource path="res://juego/autoload/CargarSegundoPlano.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.298039, 0.6, 0.0196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.490196, 0.490196, 0.490196, 1 )
+
+[node name="CargarSegundoPlano" type="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -960.0
+margin_top = -640.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -335.0
+margin_top = -105.0
+margin_right = -35.0
+margin_bottom = -30.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoCompleto" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -336.0
+margin_top = -191.0
+margin_right = -35.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 1 )
+text = "carga completa
+presione cualquier
+tecla para continua"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

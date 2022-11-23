@@ -1,0 +1,385 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://juego/menu/ajustes/MenuAjustes.gd" type="Script" id=1]
+[ext_resource path="res://juego/menu/ajustes/CambiarVolumen.gd" type="Script" id=2]
+[ext_resource path="res://juego/menu/Revamped.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://juego/menu/Kenney Blocks.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://juego/interface/Kenney Future.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://juego/menu/ajustes/font_volumen.tres" type="DynamicFont" id=6]
+[ext_resource path="res://recursos/audio/sfx/select_3.wav" type="AudioStream" id=7]
+[ext_resource path="res://recursos/audio/Star_way_short.wav" type="AudioStream" id=8]
+[ext_resource path="res://juego/menu/ajustes/ContenedorAccion.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 18
+font_data = ExtResource( 3 )
+
+[node name="MenuAjustes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_inicio = "res://juego/menu/presentacion/MenuInicio.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="BotonRegresar" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -80.0
+margin_right = 150.0
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 6 )
+text = "menu principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+bus = "Musica"
+
+[node name="ContenedorTabulado" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -97.0
+custom_fonts/font = ExtResource( 6 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioVideo" type="Tabs" parent="ContenedorTabulado"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 40.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Titulo" type="Label" parent="ContenedorTabulado/AudioVideo"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -79.5
+margin_top = -8.0
+margin_right = 79.5
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+text = "ajustes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelPrincipal" type="Panel" parent="ContenedorTabulado/AudioVideo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -340.0
+margin_top = -204.0
+margin_right = 340.0
+margin_bottom = 236.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorPrincipal" type="VBoxContainer" parent="ContenedorTabulado/AudioVideo/PanelPrincipal"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.5
+margin_top = -123.0
+margin_right = 143.5
+margin_bottom = 123.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pantalla" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_right = 341.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 2 )
+text = "pantalla"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 32.0
+margin_right = 341.0
+margin_bottom = 36.0
+
+[node name="Resolucion" type="HBoxContainer" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 40.0
+margin_right = 341.0
+margin_bottom = 68.0
+
+[node name="TextoResolucion" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/Resolucion"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 3 )
+text = "resolucion "
+align = 1
+valign = 1
+
+[node name="OptionResolucion" type="OptionButton" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/Resolucion"]
+margin_left = 165.0
+margin_right = 341.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "1920 x 1080"
+
+[node name="PantallaCompleta" type="CheckBox" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 72.0
+margin_right = 341.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 4 )
+text = "pantalla completa"
+
+[node name="HSeparator2" type="HSeparator" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 106.0
+margin_right = 341.0
+margin_bottom = 110.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator3" type="HSeparator" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 114.0
+margin_right = 341.0
+margin_bottom = 118.0
+
+[node name="Volumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 122.0
+margin_right = 341.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 5 )
+text = "volumen"
+align = 1
+valign = 1
+
+[node name="HSeparator4" type="HSeparator" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 152.0
+margin_right = 341.0
+margin_bottom = 156.0
+
+[node name="VolumenGeneral" type="HBoxContainer" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 160.0
+margin_right = 341.0
+margin_bottom = 188.0
+alignment = 1
+
+[node name="TextoVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral"]
+margin_left = 72.0
+margin_top = 3.0
+margin_right = 187.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "general"
+align = 1
+valign = 1
+
+[node name="SubirVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral"]
+margin_left = 191.0
+margin_right = 213.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "+"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="NivelVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral"]
+margin_left = 217.0
+margin_top = 3.0
+margin_right = 243.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "10"
+
+[node name="BajarVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral"]
+margin_left = 247.0
+margin_right = 269.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "-"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="VolumenMusica" type="HBoxContainer" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 192.0
+margin_right = 341.0
+margin_bottom = 220.0
+alignment = 1
+
+[node name="TextoVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica"]
+margin_left = 83.0
+margin_top = 3.0
+margin_right = 175.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "musica"
+align = 1
+valign = 1
+
+[node name="SubirVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica"]
+margin_left = 179.0
+margin_right = 201.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "+"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="NivelVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica"]
+margin_left = 205.0
+margin_top = 3.0
+margin_right = 231.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="BajarVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica"]
+margin_left = 235.0
+margin_right = 257.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "-"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="VolumenSFX" type="HBoxContainer" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal"]
+margin_top = 224.0
+margin_right = 341.0
+margin_bottom = 252.0
+alignment = 1
+
+[node name="TextoVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX"]
+margin_left = 104.0
+margin_top = 3.0
+margin_right = 154.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "SFX				"
+align = 1
+valign = 1
+
+[node name="SubirVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX"]
+margin_left = 158.0
+margin_right = 180.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "+"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="NivelVolumen" type="Label" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX"]
+margin_left = 184.0
+margin_top = 3.0
+margin_right = 210.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 6 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="BajarVolumen" type="Button" parent="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX"]
+margin_left = 214.0
+margin_right = 236.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 6 )
+text = "-"
+script = ExtResource( 2 )
+nodo_sfx = NodePath("../../../../../../BotonSFX")
+
+[node name="Inputs" type="Tabs" parent="ContenedorTabulado"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 40.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="ContenedorTabulado/Inputs"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -218.5
+margin_top = 10.0
+margin_right = 218.5
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 7 )
+text = "click en el boton para asignar tecla"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorRemapeo" type="VBoxContainer" parent="ContenedorTabulado/Inputs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.0
+margin_top = -17.0
+margin_right = 108.0
+margin_bottom = 17.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContenedorAccion" parent="ContenedorTabulado/Inputs/ContenedorRemapeo" instance=ExtResource( 9 )]
+
+[node name="InputAccion" parent="ContenedorTabulado/Inputs/ContenedorRemapeo/ContenedorAccion" index="2"]
+text = "input"
+accion = "saltar"
+
+[connection signal="pressed" from="BotonRegresar" to="." method="_on_BotonRegresar_pressed"]
+[connection signal="item_selected" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/Resolucion/OptionResolucion" to="." method="_on_OptionResolucion_item_selected"]
+[connection signal="toggled" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/PantallaCompleta" to="." method="_on_PantallaCompleta_toggled"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral/SubirVolumen" to="." method="_on_SubirVolumenGeneral_pressed"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenGeneral/BajarVolumen" to="." method="_on_BajarVolumenGeneral_pressed"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica/SubirVolumen" to="." method="_on_SubirVolumenMusica_pressed"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenMusica/BajarVolumen" to="." method="_on_BajarVolumenMusica_pressed"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX/SubirVolumen" to="." method="_on_SubirVolumenSFX_pressed"]
+[connection signal="pressed" from="ContenedorTabulado/AudioVideo/PanelPrincipal/ContenedorPrincipal/VolumenSFX/BajarVolumen" to="." method="_on_BajarVolumenSFX_pressed"]
+
+[editable path="ContenedorTabulado/Inputs/ContenedorRemapeo/ContenedorAccion"]
